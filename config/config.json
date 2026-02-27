@@ -1,0 +1,16 @@
+{
+  "monitoring": {
+    "interface": "eth0",
+    "capture_filter": "tcp or udp"
+  },
+  "detection": {
+    "model_type": "isolation_forest",
+    "threshold": 0.8,
+    "update_interval": 3600
+  },
+  "response": {
+    "auto_block": true,
+    "alert_email": "[email]",
+    "log_level": "INFO"
+  }
+}
