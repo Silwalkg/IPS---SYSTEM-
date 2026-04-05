@@ -1,0 +1,32 @@
+{
+  "monitoring": {
+    "interface": "Wi-Fi 2",
+    "capture_filter": "tcp or udp",
+    "packet_queue_size": 1000
+  },
+  "detection": {
+    "model_type": "isolation_forest",
+    "threshold": 0.75,
+    "contamination": 0.1,
+    "update_interval": 3600
+  },
+  "response": {
+    "auto_block": true,
+    "block_confidence_threshold": 0.7,
+    "alert_email": {
+      "enabled": false,
+      "smtp_host": "smtp.gmail.com",
+      "smtp_port": 587,
+      "sender": "[email]",
+      "password": "[password]",
+      "recipients": ["[email]"]
+    },
+    "log_level": "INFO",
+    "log_file": "data/threats.log"
+  },
+  "paths": {
+    "model": "models/detector.pkl",
+    "scaler": "models/scaler.pkl",
+    "feature_names": "models/feature_names.pkl"
+  }
+}
